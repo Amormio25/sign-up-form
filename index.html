@@ -9,18 +9,46 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <div class="container">
-        <!-- <div class="side-panel">
-            <img src="./side-panel-image.jpg" alt="side-panel-image">
-        </div>         -->
-        
+    <div class="container">       
         <div class="side-panel">
             <div class="gradient"></div>
             <img src="./side-panel-image.jpg" alt="side-panel-image">
         </div>
-        <div class="form">
-            
-        </div>
+        <form action="get" class="form">
+            <h1>Sign Up</h1>
+            <div class="form-container">
+                <div class="form-row">
+                    <div class="input-group">
+                        <input type="text" name="first-name" id="first-name" placeholder="First Name" required />
+                    </div>
+                    <div class="input-group">
+                        <input type="text" name="last-name" id="last-name" placeholder="Last Name" required />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="input-group">
+                        <input type="email" name="email" id="email" placeholder="Email" required />
+                    </div>
+                    <div class="input-group">
+                        <input type="tel" name="phone" id="phone" placeholder="Phone Number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="input-group">
+                        <input type="password" name="password" id="password" placeholder="Password" required />
+                    </div>
+                    <div class="input-group">
+                        <input type="password" name="confirm-pw" id="confirm-pw" placeholder="Confirm Password" required />
+                    </div>
+                </div>
+            </div>
+            <div class="create">
+                <button>Create Account</button>
+            </div>
+            <div class="log-in">
+                Already have an account? <span class="log-in">Log in</span>
+            </div>
+        </form>
     </div>
 </body>
 </html>
