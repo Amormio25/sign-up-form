@@ -1,6 +1,7 @@
 # Sign-Up Form
 <img src="./form-demo-pic.png" width="600" alt="demo pic">
-Check the live demo here ->  
+
+#### Check the live demo here -> https://amormio25.github.io/sign-up-form/   
 
 ## Features 
 - Responsive Sign-Up Form with Validation
