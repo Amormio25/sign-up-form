@@ -11,36 +11,54 @@
 <body>
     <div class="container">       
         <div class="side-panel">
-            <div class="gradient"></div>
+            <div class="gradient">Banchamek Gym</div>
             <img src="./side-panel-image.jpg" alt="side-panel-image">
         </div>
         <form action="get" class="form">
             <h1>Sign Up</h1>
             <div class="form-container">
-                <div class="form-row">
-                    <div class="input-group">
-                        <input type="text" name="first-name" id="first-name" placeholder="First Name" required />
+                    <div class="form-row">
+                        <div class="input-group">
+                            <input type="text" name="first-name" id="first-name" class="name" placeholder="First Name" required />
+                            <div class="error-box"></div>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" name="last-name" id="last-name" class="name" placeholder="Last Name" required />
+                            <div class="error-box"></div>
+                        </div>
                     </div>
-                    <div class="input-group">
-                        <input type="text" name="last-name" id="last-name" placeholder="Last Name" required />
+                    <div class="form-row">
+                        <div class="input-group">
+                            <input type="email" name="email" id="email" placeholder="Email" required />
+                            <div class="error-box">
+                                <p class="email">Please provide a valid email.</p>
+                                <p class="email">Example: jm27@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <input type="tel" name="phone" id="phone" placeholder="Phone Number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required />
+                            <div class="error-box">
+                                <p class="phone">Please provide a valid phone number.</p>
+                                <p class="phone">Example: 123-456-7890</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="form-row">
-                    <div class="input-group">
-                        <input type="email" name="email" id="email" placeholder="Email" required />
+                    <div class="form-row">
+                        <div class="input-group">
+                            <input type="password" name="password" id="password" placeholder="Password" required />
+                            <div class="error-box">
+                                <p class="password">Must include uppercase, number, and symbol</p>
+                                <p class="password">Example: Jm27$</p>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <input type="password" name="confirm-pw" id="confirm-pw" placeholder="Confirm Password" required />
+                            <div class="error-box">
+                                <p class="confirm-pw">Passwords do not match.</p>
+                                <p class="confirm-pw">Please enter the same password.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="input-group">
-                        <input type="tel" name="phone" id="phone" placeholder="Phone Number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required />
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="input-group">
-                        <input type="password" name="password" id="password" placeholder="Password" required />
-                    </div>
-                    <div class="input-group">
-                        <input type="password" name="confirm-pw" id="confirm-pw" placeholder="Confirm Password" required />
-                    </div>
-                </div>
             </div>
             <div class="create">
                 <button>Create Account</button>

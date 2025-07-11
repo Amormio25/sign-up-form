@@ -4,11 +4,24 @@
     box-sizing: border-box;
 }
 
+:root {
+    --main-green: rgb(19, 204, 148);
+    --main-green-hover: rgb(20, 143, 106);
+    --error-color: red;
+    --light-green: rgb(17, 149, 109);
+    --light-green-hover: rgb(20, 188, 115);
+}
+
+@font-face {
+    font-family: 'Title Font';
+    src: url('../form-font/form-title-font.ttf');
+}
+
 .container {
-    display: flex;
-    align-items: center;
     width: 100vw;
     height: 100vh;
+    display: flex;
+    align-items: center;
     background-color: rgb(42, 40, 40);
     color: #999;
     font-family: "Helvetica", "Arial", sans-serif;
@@ -23,7 +36,7 @@
 
 img {
     width: 100%;
-    height: inherit;
+    height: 100%;
     object-fit: cover;
     object-position: 80% 50%;
     filter: grayscale(100%);
@@ -33,17 +46,25 @@ img {
 .gradient {
     width: 100%;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
     position: absolute;
     background-image: linear-gradient(420deg, black, transparent);
     z-index: 2;
+    padding: 3rem;
+    color: var(--main-green);
+    text-shadow: -1px 1px 3px black;
+    font-family: 'Title Font';
+    font-size: 5rem;
 }
 
 h1 {
     padding-bottom: 3rem;
     text-align: left;
+    color: white;
     font-size: 3rem;
     font-weight: 750;
-    color: white;
 }
 
 .form {
@@ -65,62 +86,96 @@ h1 {
 
 .form-row {
     display: flex;
-    gap: 10rem;
+    gap: 5rem;
 }
 
 .input-group {
+    width: 50%;
     display: flex;
     flex-direction: column;
 }
 
-.form-row input {
+.input-group input {
+    width: 100%;
+    padding: 7px 7px 2px 0;
     background-color: transparent;
     border: none;
     border-bottom: 1px solid white;
     outline: none;
-    width: 125%;
-    padding: 7px 7px 7px 0;
-    color: white;
-    font-size: 0.875rem;
-    font-size: 1.2rem;
     text-align: left;
+    color: white;
+    font-size: 1.2rem;
     transition: 0.2s ease-out
 }
 
-.form-row input:focus {
+.input-group input:focus {
     border-bottom: 2px solid white;
     transition: 0.2s ease-out;
 }
 
-.form-row input:not(:placeholder-shown, :focus):valid {
-    border-bottom: 2px solid rgb(19, 204, 148);
-    color: rgb(19, 204, 148);
+.error-box {
+    width: 100%;
+    height: 2rem;
+    padding-top: 2px;
+}
+
+.input-group p {
+    width: 100%;
+    font-size: 0.8rem;
+    line-height: 1rem;
+    color: var(--error-color);
+    opacity: 0;
+    transform: translateY(0.2rem);
+}
+
+.input-group input.valid {
+    border-bottom: 1px solid var(--main-green);
+    color: var(--main-green);
     transition: 0.2s ease-out;
 } 
 
-.form-row input:not(:placeholder-shown, :focus):invalid {
-    border-bottom: 2px solid red;
-    color: red;
-    transition: 0.2s ease-out;
+.input-group input.error {
+    border-bottom: 1px solid var(--error-color);
+}
+
+.input-group p.error {
+    opacity: 1;
+    transform: translateY(0px);
+    transition: 0.6s ease-in-out;
 }
 
 button {
-    border: none;
-    background: linear-gradient(420deg, rgb(23, 174, 129), rgb(19, 204, 124));
-    border-radius: 4px;
     padding: 0.8rem 1.2rem;
+    background: linear-gradient(420deg, var(--light-green), var(--main-green));
+    border: none;
+    border-radius: 4px;
     font-size: 1.2rem;
     font-weight: 750;
     color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: linear-gradient(420deg, var(--main-green-hover), var(--light-green-hover));
+    transition: 0.2s ease-out;
 }
 
 .log-in {
-    padding-top: 1.2rem;
+    margin-top: 1.2rem;
 }
 
 .log-in span {
-    font-weight: 750;
-    background: -webkit-linear-gradient(rgb(23, 174, 129), rgb(19, 204, 124));
+    background: -webkit-linear-gradient(var(--main-green), var(--light-green));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    font-weight: 750;
+    cursor: pointer;
+}
+
+.log-in span:hover {
+    background: -webkit-linear-gradient(var(--main-green-hover), var(--light-green-hover));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 750;
+    cursor: pointer; 
 }
